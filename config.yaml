@@ -1,0 +1,8 @@
+portnum: 9090
+data:
+    string: text
+    int: 1
+    float: 0.1
+    list: [1, 2, 3]
+    dict:
+        from: to
