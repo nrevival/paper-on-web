@@ -1,0 +1,49 @@
+{
+    "manifest_version": 3,  
+    "name": "Pigeon: to find papers on Sci-Hub",
+    "description": "Print Hello, World! message",
+    "version": "0.0.1",
+    "action": {},  
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "http://*/",
+        "https://*/"
+    ],
+    "icons": {
+        "16": "src/img/pigeon.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["src/img/pigeon.png"],
+            "matches": ["https://scholar.google.com/*"],
+            "extension_ids": []
+        }
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://scholar.google.com/*"],
+            "js": [
+                "/lib/js/jquery-3.6.0.min.js",
+                "/src/js/googleScholarScript.js"                
+            ]
+        },
+        {
+            "matches": [
+                "https://sci-hub.se/http*",
+                "https://sci-hub.st/http*",
+                "https://sci-hub.ee/http*",
+                "https://sci-hub.se/http*",
+                "https://sci-hub.do/http*"
+            ],
+            "js": [
+                "/src/js/scihubScript.js"                
+            ]
+        }
+    ]
+}
