@@ -1,6 +1,0 @@
-connexion
-connexion[swagger-ui]
-PyDrive
-google-api-python-client
-oauth2client
-git+https://github.com/wbaek/theconf.git
